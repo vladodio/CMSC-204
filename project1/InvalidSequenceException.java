@@ -1,6 +1,6 @@
 
 public class InvalidSequenceException extends RuntimeException {
 	public InvalidSequenceException() {
-		super("Too many duplicate characters in a row!");
+		super("The password must not have that many characters in a row");
 	}
 }

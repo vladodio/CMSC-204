@@ -1,6 +1,6 @@
 
 public class NoLowerAlphaException extends RuntimeException {
 	public NoLowerAlphaException() {
-		super("No lowercase letters found!");
+		super("The password must contain at least one lower case alphabetic character");
 	}
 }

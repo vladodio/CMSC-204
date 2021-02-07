@@ -1,6 +1,6 @@
 
 public class NoDigitException extends RuntimeException {
 	public NoDigitException() {
-		super("No number found!");
+		super("The password must contain at least one digit");
 	}
 }

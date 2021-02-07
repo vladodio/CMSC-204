@@ -1,6 +1,6 @@
 
 public class LengthException extends RuntimeException {
 	public LengthException() {
-		super("Password is too short!");
+		super("The password must be at least 6 characters");
 	}
 }

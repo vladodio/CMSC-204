@@ -1,6 +1,6 @@
 
 public class NoSpecialCharacterException extends RuntimeException {
 	public NoSpecialCharacterException() {
-		super("Password does not contain a special character!");
+		super("The password must contain at least one special character");
 	}
 }

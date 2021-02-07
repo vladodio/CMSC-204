@@ -19,15 +19,18 @@ import org.junit.Test;
  *
  */
 public class PasswordCheckerSTUDENT_Test {
-
+	ArrayList<String> passwords;
+	String password1, password2;
+	
+	
 	@Before
 	public void setUp() throws Exception {
-		
+		passwords = new ArrayList<String>();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-	
+		passwords = null;
 	}
 
 	/**

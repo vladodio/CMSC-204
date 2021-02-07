@@ -15,15 +15,30 @@ public class PasswordCheckerUtility {
 		
 		public static ArrayList<String> getInvalidPasswords(ArrayList<String> passwords){
 			ArrayList<String> output = new ArrayList<String>();
-			for(String password: passwords) {
+			for(String password : passwords) {
 				try {
 					isValidPassword(password);
-				}
-				catch(RuntimeException e){
-					output.add(password);
-				}
+				} catch (LengthException e) {
+					output.add(password+" -> "+e.getMessage());
+					e.printStackTrace();
+				} catch (NoDigitException e) {
+					output.add(password+" -> "+e.getMessage());
+					e.printStackTrace();
+				} catch (NoLowerAlphaException e) {
+					output.add(password+" -> "+e.getMessage());
+					e.printStackTrace();
+				} catch (NoUpperAlphaException e) {
+					output.add(password+" -> "+e.getMessage());
+					e.printStackTrace();
+				} catch (NoSpecialCharacterException e) {
+					output.add(password+" -> "+e.getMessage());
+					e.printStackTrace();
+				} catch (InvalidSequenceException e) {
+					output.add(password+" -> "+e.getMessage());
+					e.printStackTrace();
+				} 
 			}
-			return output;
+			return(output);
 		}
 		
 		public static boolean hasBetweenSixAndNineChars(String password) {
@@ -47,7 +62,7 @@ public class PasswordCheckerUtility {
 		public static boolean hasSameCharInSequence(String password) throws InvalidSequenceException{
 			boolean duplicatesFound = false;
 			// regex not working here for some reason, java regex different from python2.7?
-			//duplicatesFound = password.matches("(.)\1");
+			//duplicatesFound = password.matches("(.)\\1");
 			for(int i = 0; i < password.length()-2; i++) {
 				if((password.charAt(i) == password.charAt(i+1)) && (password.charAt(i+1) == password.charAt(i+2))) {
 					duplicatesFound=true;
